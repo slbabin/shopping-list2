@@ -10,5 +10,5 @@ def get_shopping_list(request):
     context = {
         'items': items
     }
-    return render(request, 'shoppinglistapp/index.html', context)
+    return render(request, 'index.html', context)
 
