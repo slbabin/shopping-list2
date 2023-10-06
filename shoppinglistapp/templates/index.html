@@ -21,10 +21,13 @@
         <tr>
             {% if item.complete %}
             <td><strike>{{ item.name }}</strike></td>
+            <td>{{ item.complete }}</td>
             {% else %}
             <td>{{ item.name }}</td>
             {% endif %}
         </tr>
+        {% empty %}
+        <tr><td>No items to buy!</td></tr>
         {% endfor %}
     </table>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

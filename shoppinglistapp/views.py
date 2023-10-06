@@ -12,3 +12,10 @@ def get_shopping_list(request):
     }
     return render(request, 'index.html', context)
 
+
+def add_item(request):
+    items = Item.objects.all()
+    context = {
+        'items': items
+    }
+    return render(request, 'add_item.html', context)
