@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Item
+from .forms import ItemForm
 
 
 # Create your views here.
@@ -15,9 +16,17 @@ def get_shopping_list(request):
 
 def add_item(request):
     if request.method == 'POST':
-        name = request.POST.get('item_name')
-        complete = 'item_complete' in request.POST
-        Item.objects.create(name=name, complete=complete)
+        form = ItemForm(request.POST)
+        if form.is_valid():
+            form.save()
+        # name = request.POST.get('item_name')
+        # complete = 'item_complete' in request.POST
+        # Item.objects.create(name=name, complete=complete)
 
         return redirect('get_shopping_list')
-    return render(request, 'shoppinglistapp/add_item.html')
+    form = ItemForm()
+    context = {
+        'form': form
+    }
+
+    return render(request, 'shoppinglistapp/add_item.html', context)

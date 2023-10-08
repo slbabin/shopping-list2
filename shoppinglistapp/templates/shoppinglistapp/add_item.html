@@ -19,7 +19,7 @@
 
     <form method="POST" action="{% url 'add' %}">
         {% csrf_token %}
-        <div>
+        <!-- <div>
             <p>
                 <label for="id_name">Item name:</label>
                 <input type="text" id="id_name" name="item_name" />
@@ -30,7 +30,9 @@
                 <label for="id_complete">Status:</label>
                 <input type="checkbox" id="id_complete" name="item_complete" />
             </p>
-        </div>
+        </div> -->
+
+        {{ form }}
         <div>
             <p></p>
             <button type="submit">Add Item</button>
