@@ -17,7 +17,7 @@
     <h1>Your Shopping List</h1>
 
 
-    <form action="add" method="POST">
+    <form method="POST" action="{% url 'add' %}">
         {% csrf_token %}
         <div>
             <p>
@@ -27,13 +27,13 @@
         </div>
         <div>
             <p>
-                <label for="id_complete">Item name:</label>
+                <label for="id_complete">Status:</label>
                 <input type="checkbox" id="id_complete" name="item_complete" />
             </p>
         </div>
         <div>
             <p></p>
-            <button type="submit">Add an Item</button>
+            <button type="submit">Add Item</button>
             </p>
         </div>
     </form>

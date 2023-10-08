@@ -17,9 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from shoppinglistapp.views import get_shopping_list, add_item
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_shopping_list, name='get_shopping_list'),
-    path('add', add_item, name='add'),
+    path('add/', add_item, name='add'),
 ]
