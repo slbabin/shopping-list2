@@ -27,9 +27,14 @@
             {% endif %}
         </tr>
         {% empty %}
-        <tr><td>No items to buy!</td></tr>
+        <tr>
+            <td>No items to buy!</td>
+        </tr>
         {% endfor %}
     </table>
+
+    <a href="/add">Add and Item to the List</a>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>

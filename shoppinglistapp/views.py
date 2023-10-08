@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 from .models import Item
 
 
@@ -10,12 +10,9 @@ def get_shopping_list(request):
     context = {
         'items': items
     }
-    return render(request, 'index.html', context)
+    return render(request, 'shoppinglistapp/index.html', context)
 
 
 def add_item(request):
-    items = Item.objects.all()
-    context = {
-        'items': items
-    }
-    return render(request, 'add_item.html', context)
+
+    return render(request, 'shoppinglistapp/add_item.html')
