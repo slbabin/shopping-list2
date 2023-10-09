@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Edit Shopping List Item</title>
+</head>
+
+<body>
+    <h1>Your Shopping List</h1>
+
+
+    <form method="POST">
+        {% csrf_token %}
+        <!-- <div>
+            <p>
+                <label for="id_name">Item name:</label>
+                <input type="text" id="id_name" name="item_name" />
+            </p>
+        </div>
+        <div>
+            <p>
+                <label for="id_complete">Status:</label>
+                <input type="checkbox" id="id_complete" name="item_complete" />
+            </p>
+        </div> -->
+
+        {{ form }}
+        <div>
+            <p></p>
+            <button type="submit">Edit Shopping List Item</button>
+            </p>
+        </div>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
