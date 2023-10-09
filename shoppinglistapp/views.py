@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Item
 from .forms import ItemForm
 
@@ -33,5 +33,28 @@ def add_item(request):
 
 
 def edit_item(request, item_id):
-    return render(request, 'shoppinglistapp/edit_item.html')
+    item = get_object_or_404(Item, id=item_id)
+    if request.method == 'POST':
+        form = ItemForm(request.POST, instance=item)
+        if form.is_valid():
+            form.save()
 
+        return redirect('get_shopping_list')
+    form = ItemForm(instance=item)
+    context = {
+        'form': form
+    }
+    return render(request, 'shoppinglistapp/edit_item.html', context)
+
+
+def item_status(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.complete = not item.complete
+    item.save()
+    return redirect('get_shopping_list')
+
+
+def delete_item(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    item.delete()
+    return redirect('get_shopping_list')

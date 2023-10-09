@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <h1>Your Shopping List</h1>
+    <a href="{% url 'get_shopping_list' %}"><h1>Your Shopping List</h1></a>
 
     <table>
 
@@ -28,6 +28,16 @@
             <td>
                 <a href="/edit/{{item.id}}">
                     <button>Edit</button>
+                </a>
+            </td>
+            <td>
+                <a href="/status/{{item.id}}">
+                    <button>Update status</button>
+                </a>
+            </td>
+            <td>
+                <a href="/delete/{{item.id}}">
+                    <button>Delete Item</button>
                 </a>
             </td>
         </tr>
